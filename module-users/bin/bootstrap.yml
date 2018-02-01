@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: module-users
+    
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9999/auth/user
+    
+---
+spring:
+  profiles: development
+server:
+  address: 127.0.0.1
+  port: ${PORT:0}
+
+---
+spring:
+  profiles: production
+server:
+  address: 127.0.0.5
+  port: ${PORT:10000}

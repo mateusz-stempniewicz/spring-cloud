@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'module-users'
+    version =  '0.1.0-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://192.168.200.201:9998/repository/snapshots/"
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+    compile group: 'io.springfox', name: 'springfox-spring-web', version: '2.7.0'
+    
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.9.RELEASE'
+    compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.2.1.RELEASE'
+	compile group: 'org.springframework.security', name: 'spring-security-jwt', version: '1.0.9.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.9.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-security', version: '1.2.2.RELEASE'
+    
+    compile group: 'com.xcactus.framework.dtos', name: 'users', version: '0.1.1-SNAPSHOT'
+    
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '1.4.2.RELEASE'  
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '1.4.2.RELEASE'
+    
+    testCompile("junit:junit")
+}

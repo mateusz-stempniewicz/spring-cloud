@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: zuul
+    
+server:
+  address: 127.0.0.1
+  port: ${PORT:9090}
