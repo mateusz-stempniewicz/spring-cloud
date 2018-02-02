@@ -1,12 +1,7 @@
 spring:
   application:
-    name: module-users
-    
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://localhost:9999/auth/user
-    
+    name: module-users  
+
 ---
 spring:
   profiles: development

@@ -19,6 +19,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients("com.xcactus.framework.module.users")
+// @PropertySource(value={"classpath:application.yml"})
 public class Application {
 	
 	/**

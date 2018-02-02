@@ -5,12 +5,6 @@ zuul:
       serviceId: module-users
       stripPrefix: false
       
-security:
-  oauth2:
-    resource:
-      
-      userInfoUri: https://localhost:9999/auth/user
-      
 eureka:  
   client:
     fetchRegistry: true

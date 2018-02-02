@@ -1,3 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_oauth 
+    username: root
+    password: root 
+
 eureka:  
   client:
     fetchRegistry: true
@@ -11,3 +21,13 @@ eureka:
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    
+app:
+  resource-id: app-tool
+  client: app-tool
+  client-remember-me: app-tool-remember-me
+  scope: app-tool
+  access-token-validity: 600
+  refresh-token-validity: 1800
+  signing-key: app-tool-secret
+  
